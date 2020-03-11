@@ -7,13 +7,15 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --config-name prod",
     "watch": "webpack --config-name dev",
-    "electron": "electron src/electron.js"
+    "electron": "electron src/electron.js",
+    "dev": "npm run watch & npm run electron"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.8.7",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
     "@babel/preset-env": "^7.8.7",
     "@babel/preset-react": "^7.8.3",
     "babel-loader": "^8.0.6",
@@ -31,12 +33,16 @@
     "presets": [
       "@babel/preset-env",
       "@babel/preset-react"
+    ],
+    "plugins": [
+      "@babel/proposal-class-properties"
     ]
   },
   "dependencies": {
     "electron": "^8.1.1",
     "lodash": "^4.17.15",
     "react": "^16.13.0",
+    "react-desktop": "^0.3.9",
     "react-dom": "^16.13.0"
   }
 }

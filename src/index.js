@@ -2,42 +2,20 @@ import React, { Component } from "react";
 import ReactDOM from "react-dom";
 
 import "./style/main.sass";
+import Headbar from "./components/Headbar";
 
-class Form extends Component {
-  constructor() {
-    super();
-
-    this.state = {
-      value: ""
-    };
-
-    this.handleChange = this.handleChange.bind(this);
-  }
-
-  handleChange(event) {
-    const { value } = event.target;
-    this.setState(() => {
-      return {
-        value
-      };
-    });
-  }
-
+class App extends Component {
   render() {
     return (
-      <form>
-        <input
-          type="text"
-          value={this.state.value}
-          onChange={this.handleChange}
-        />
-        <p>{this.state.value}</p>
-      </form>
+      <React.Fragment>
+        <Headbar className="titlebar" />
+        <div>
+          <h1>Hallo</h1>
+        </div>
+      </React.Fragment>
     );
   }
 }
 
-export default Form;
-
 const wrapper = document.getElementById("root");
-wrapper ? ReactDOM.render(<Form />, wrapper) : false;
+wrapper ? ReactDOM.render(<App />, wrapper) : false;
